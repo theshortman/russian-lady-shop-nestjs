@@ -22,15 +22,15 @@ export class ProductImage extends Model<ProductImageAttributes, ProductImageCrea
     id: number
 
     @ApiProperty({ example: 'https://example.com/image-large.jpg' })
-    @Column({ type: DataType.STRING, unique: true, allowNull: false, get() { return process.env.MEDIA_SOURCE || '' + this.getDataValue('image_large') } })
+    @Column({ type: DataType.STRING, unique: true, allowNull: false, get() { return (process.env.MEDIA_SOURCE || '') + this.getDataValue('image_large') } })
     image_large: string
 
     @ApiProperty({ example: 'https://example.com/image-medium.jpg' })
-    @Column({ type: DataType.STRING, unique: true, allowNull: false, get() { return process.env.MEDIA_SOURCE || '' + this.getDataValue('image_medium') } })
+    @Column({ type: DataType.STRING, unique: true, allowNull: false, get() { return (process.env.MEDIA_SOURCE || '') + this.getDataValue('image_medium') } })
     image_medium: string
 
     @ApiProperty({ required: false, example: 'https://example.com/image-small.jpg' })
-    @Column({ type: DataType.STRING, unique: true, allowNull: false, get() { return process.env.MEDIA_SOURCE || '' + this.getDataValue('image_small') } })
+    @Column({ type: DataType.STRING, unique: true, allowNull: false, get() { return (process.env.MEDIA_SOURCE || '') + this.getDataValue('image_small') } })
     image_small: string
 
     @ApiProperty({ example: 1 })
