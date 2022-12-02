@@ -31,6 +31,10 @@ describe('CategoriesService Unit Tests', () => {
         service = moduleRef.get(CategoriesService)
     })
 
+    afterEach(() => {
+        jest.clearAllMocks()
+    })
+
     it('calling getCategoryList', async () => {
         findAll.mockReturnValue([{ id: 1 }])
         expect(await service.getCategoryList()).toEqual([{ id: 1 }])

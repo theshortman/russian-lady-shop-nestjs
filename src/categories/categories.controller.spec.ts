@@ -25,6 +25,10 @@ describe('CategoriesController Unit Tests', () => {
     spyService = moduleRef.get<CategoriesService>(CategoriesService)
   })
 
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   it('calling getCategoryList should call getCategoryList service method', async () => {
     controller.getCategoryList()
     expect(spyService.getCategoryList).toHaveBeenCalled()
